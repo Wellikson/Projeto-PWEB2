@@ -1,0 +1,10 @@
+com/mycompany/projeto_pweb2_wellikson/model/dao/ClienteDao.class
+com/mycompany/projeto_pweb2_wellikson/model/entity/Veiculo.class
+com/mycompany/projeto_pweb2_wellikson/model/dao/LocacaoDao.class
+com/mycompany/projeto_pweb2_wellikson/controller/LocacoesController.class
+com/mycompany/projeto_pweb2_wellikson/model/dao/JpaUtil.class
+com/mycompany/projeto_pweb2_wellikson/model/entity/Locacao.class
+com/mycompany/projeto_pweb2_wellikson/model/entity/Cliente.class
+com/mycompany/projeto_pweb2_wellikson/controller/VeiculosController.class
+com/mycompany/projeto_pweb2_wellikson/controller/ClientesController.class
+com/mycompany/projeto_pweb2_wellikson/model/dao/VeiculoDao.class

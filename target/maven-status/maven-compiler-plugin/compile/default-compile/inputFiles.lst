@@ -1,0 +1,10 @@
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/model/dao/JpaUtil.java
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/model/dao/LocacaoDao.java
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/controller/LocacoesController.java
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/model/dao/VeiculoDao.java
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/controller/VeiculosController.java
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/model/entity/Cliente.java
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/model/dao/ClienteDao.java
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/model/entity/Locacao.java
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/controller/ClientesController.java
+/home/wellikson/NetBeansProjects/projeto_pweb2_wellikson/src/main/java/com/mycompany/projeto_pweb2_wellikson/model/entity/Veiculo.java
