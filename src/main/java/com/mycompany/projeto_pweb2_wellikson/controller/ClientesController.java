@@ -69,7 +69,6 @@ public class ClientesController {
     public void enviardados(int id) {
         Cliente cliente = dao.buscarCliente(id);
         result.include(cliente);
-        result.include("locacao", ldao.buscarLocacao(cliente.getLocacoes().get(0).getId_locacao()));
         result.redirectTo(this).dados();
     }
 

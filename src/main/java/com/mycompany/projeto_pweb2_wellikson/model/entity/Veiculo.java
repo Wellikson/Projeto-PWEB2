@@ -66,7 +66,12 @@ public class Veiculo implements Serializable {
     public void setValordiaria(double valordiaria) {
         this.valordiaria = valordiaria;
     }
-    
-    
+
+    public String dados() {
+        return "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nº Veiculo: " + id_veiculo
+                + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modelo: "
+                + modelo + "<br>Placa: " + placa
+                + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valor Diaria: " + valordiaria;
+    }
 
 }

@@ -5,35 +5,50 @@
 --%>
 <%@ include file="../template/header.jsp" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<h2>Clientes Cadastrados</h2>
-<div class="d-flex flex-wrap justify-content-md-center" "="">
-    <table class="table table-dark table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Nº Cliente</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Telefone</th>
-                <th scope="col">Nº Locação</th>
-                <th scope="col">Data da Locaçao</th>
-                <th scope="col">Veiculo</th>
-                <th scope="col">Qtd Diarias</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Excluir</th>
-            </tr>
-        </thead>
-        <tbody>
-                <tr>
-                    <th scope="row">${cliente.id_cliente}</th>
-                    <td>${cliente.nome}</td>
-                    <td>${cliente.telefone}</td>
-                        <td> ${locacao.veiculoNome()}</td>
-                    <td> <a href="${linkTo[ClientesController].editar}?id=${c.id_cliente}"
-                            class="btn btn-primary">Editar</a></td>
-                    <td><a href="${linkTo[ClientesController].excluir}?id=${c.id_cliente}"
-                           class="btn btn-danger">Excluir</a></td>
-                </tr>
-        </tbody>
-    </table>
+<style>
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center
+    }
+    .box {
+        width: 85%;
+        background: #fff;
+    }
+</style>
+<h2>Dados do Cliente</h2>
+<div class="container">
+    <div class="card text-white bg-dark box" >
+        <div class="card-header">
+            <h4>Nome Completo : ${cliente.nome}
+                &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;
+                Telefone : ${cliente.telefone}</h4>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Locação</h4>
+            <c:forEach items="${cliente.locacoes}" var="l">
+                <ul class="list-group list-group-flush bg-dark">
+                    <li class="list-group-item bg-dark">Modelo do Veiculo : ${l.veiculoNome()}
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;
+                        Data de Locação : ${l.dataInicio}
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;
+                        Data de Devolução : ${l.dataFim}</li>
+                    <li class="list-group-item bg-dark">Quantidade de Dias : ${l.qtdDias()}
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;
+                        Valor da Diaria : ${l.veiculo.getValordiaria()}
+                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;
+                        Total a Pagar : ${l.total()}</li>
+                </ul><br>
+            </c:forEach>
+        </div>
+    </div>
+        
 </div>
 <%@ include file="../template/footer.jsp" %>
 

@@ -30,7 +30,7 @@ import javax.validation.constraints.Pattern;
 @Entity
 @Table(name = "tb_locacao")
 public class Locacao implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id_locacao;
@@ -47,7 +47,7 @@ public class Locacao implements Serializable {
 
     @JoinColumn(name = "id_cliente")
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE},
-            fetch=FetchType.EAGER)
+            fetch = FetchType.EAGER)
     Cliente cliente;
 
     @JoinColumn(name = "id_veiculo")
@@ -93,7 +93,7 @@ public class Locacao implements Serializable {
     public void setVeiculo(Veiculo veiculo) {
         this.veiculo = veiculo;
     }
-    
+
     public String clienteNome() {
         return cliente.getNome();
     }
@@ -114,5 +114,11 @@ public class Locacao implements Serializable {
         double total;
         total = qtdDias() * veiculo.getValordiaria();
         return total;
-    }   
+    }
+
+    public String dados() {
+        return "Nº Locação: " + id_locacao + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Inicio: " + dataInicio
+                + "&nbsp;&nbsp;&nbsp;DataFim: " + dataFim + "<br>Qtd Diarias: " + qtdDias()
+                + veiculo.dados() + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valor total: " + total();
+    }
 }

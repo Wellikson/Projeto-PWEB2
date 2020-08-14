@@ -71,6 +71,18 @@ public class Cliente implements Serializable {
     public void setLocacoes(List<Locacao> locacoes) {
         this.locacoes = locacoes;
     }
-    
+    public int nlocacoes(){
+        return locacoes.size();
+    }
+    public String locacoes() {
+        String todas = "";
+        if(locacoes != null){
+            for (int i = 0; i < locacoes.size(); i++) {
+                todas = todas + locacoes.get(i).dados() + "<br>";
+            }        
+        }else
+            todas="Sem Locaçoes no Momento!";
+        return todas;
+    }
     
 }
