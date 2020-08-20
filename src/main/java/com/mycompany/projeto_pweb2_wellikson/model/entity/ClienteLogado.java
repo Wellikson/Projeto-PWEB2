@@ -27,6 +27,9 @@ public class ClienteLogado implements Serializable {
         return cliente.getNome();
     }
 
+    public Integer getId(){
+        return cliente.getId_cliente();
+    }
     public boolean isLogado() {
         return cliente != null;
     }

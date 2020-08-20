@@ -6,7 +6,7 @@
 
 <%@ include file="../template/header.jsp" %> 
 <h2>Cadastro de Cliente</h2>
-<form class="needs-validation" novalidate action="${linkTo[ClientesController].salvar}" method="POST">
+<form class="needs-validation" novalidate action="${linkTo[ClientesController].salvar}" style="margin-left:28%" method="POST">
     <div>
         <div class="form-row">
 
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-primary " type="submit">Adicionar</button>
+    <button class="btn btn-primary " style="margin-left:28%" type="submit">Adicionar</button>
 
 
 </form>

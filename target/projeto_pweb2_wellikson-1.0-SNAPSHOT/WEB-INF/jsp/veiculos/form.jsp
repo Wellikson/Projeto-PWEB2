@@ -17,7 +17,7 @@
 </style>-->
 <%@ include file="../template/header.jsp" %>
 <h2>Cadastrar Veículo</h2>
-<form class="needs-validation" novalidate action="${linkTo[VeiculosController].salvar}" method="POST">
+<form class="needs-validation" novalidate action="${linkTo[VeiculosController].salvar}" method="POST" style="margin-left:28%">
     <input type="hidden" name="veiculo.id_veiculo" value="${veiculo.id_veiculo}"/><br/>
     <div class="form-row">
         <div class="col-md-4 mb-3">
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-primary" type="submit">Adicionar</button>
+    <button class="btn btn-primary" style="margin-left: 28%"type="submit">Adicionar</button>
 </form>
 
 <script>

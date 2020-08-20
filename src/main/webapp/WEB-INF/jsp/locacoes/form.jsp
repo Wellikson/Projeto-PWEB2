@@ -19,7 +19,7 @@
 </style>-->
 <%@ include file="../template/header.jsp" %>
 <h2>Cadastrar Locação</h2>
-<form class="needs-validation" novalidate action="${linkTo[LocacoesController].salvar}" method="POST">
+<form class="needs-validation" novalidate action="${linkTo[LocacoesController].salvar}" method="POST" style="margin-left:25%">
     <input type="hidden" name="locacao.id_locacao" value="${locacao.id_locacao}"/><br/>
     <div class="form-row">
         <div class="col-md-4 mb-3">
@@ -61,20 +61,15 @@
         <div class="col-md-4 mb-3">
             <label for="validationCustom05">Nome do Cliente</label>
             <select class="form-control" name="locacao.cliente.id_cliente">
-                <c:forEach  items="${clientes}"var="c">
-                    <option value="${c.id_cliente}">${c.nome}</option>
-                </c:forEach>
-            </select><div class="invalid-feedback">
+                <option value="${clientelogado.id}">${clientelogado.nome}</option>
+            </select>
+            <div class="invalid-feedback">
                 Por favor, escolha o Nome do Cliente.
             </div>
 
         </div>
-
-        <input type="text" class="form-control" id="validationCustom02" placeholder="dd-mm-aaaa" 
-               name="locacao.dataFim" value="${clienteLog.nome}" >
-
     </div>
-    <button class="btn btn-primary" type="submit">Adicionar</button>
+    <button class="btn btn-primary" style="margin-left: 28%" type="submit">Adicionar</button>
 </form>
 
 <script>
