@@ -57,6 +57,7 @@
                 Por favor, escolha o Modelo do Veiculo.
             </div>
         </div>
+
         <div class="col-md-4 mb-3">
             <label for="validationCustom05">Nome do Cliente</label>
             <select class="form-control" name="locacao.cliente.id_cliente">
@@ -68,6 +69,10 @@
             </div>
 
         </div>
+
+        <input type="text" class="form-control" id="validationCustom02" placeholder="dd-mm-aaaa" 
+               name="locacao.dataFim" value="${clienteLog.nome}" >
+
     </div>
     <button class="btn btn-primary" type="submit">Adicionar</button>
 </form>

@@ -37,6 +37,19 @@
                 </div>
             </div>
         </div>
+                <div class="form-row">
+            <div class="form-group col-md-3 ">
+                <label for="validationTooltip02">Senha</label>
+                <input type="password" class="form-control" id="validationTooltip02" 
+                       name="cliente.senha"  value="${cliente.senha}"  required>
+                <div class="invalid-feedback">
+                    Digite sua senha
+                </div>
+                <div class="valid-feedback">
+                    Tudo certo!
+                </div>
+            </div>
+        </div>
     </div>
     <button class="btn btn-primary " type="submit">Adicionar</button>
 

@@ -19,6 +19,7 @@
                 text-align:center;
             }
 
+
         </style>
     </head>
     <body>
@@ -40,7 +41,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Locação</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown09">
                             <a class="dropdown-item " href="${linkTo[LocacoesController].lista}">Ver Locacoes</a>
-                            <a class="dropdown-item " href="${linkTo[LocacoesController].form}">Adicionar Locação</a>
+                            <a class="dropdown-item " href="${linkTo[ClientesController].login}">Adicionar Locação</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -49,6 +50,19 @@
                             <a class="dropdown-item" href="${linkTo[ClientesController].lista}">Ver Clientes</a>
                             <a class="dropdown-item" href="${linkTo[ClientesController].form}">Adicionar Cliente</a>
                         </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <c:if test="${clientelogado.logado}">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${clientelogado.nome}</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown10">
+                                <a class="dropdown-item" href="${linkTo[LocacoesController].sair}">Sair</a>
+                            </div>
+                        </li>
+                    </c:if>
                     </li>
                 </ul>
             </div>
@@ -66,7 +80,7 @@
                     <ul>
                         <c:forEach items="${errors}" var="e">
                             <li>${e.category}-${e.message}</li>
-                        </c:forEach>
+                            </c:forEach>
                     </ul>
                 </div>
             </c:if>

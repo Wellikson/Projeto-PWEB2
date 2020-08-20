@@ -14,6 +14,7 @@ import com.mycompany.projeto_pweb2_wellikson.model.dao.VeiculoDao;
 import com.mycompany.projeto_pweb2_wellikson.model.entity.Locacao;
 import java.util.List;
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -36,6 +37,9 @@ public class LocacoesController {
 
     @Inject
     Validator validator;
+    
+    @Inject
+    HttpSession session;
 
     public void form() {
         result.include("veiculos", vdao.buscarVeiculos());
@@ -70,6 +74,10 @@ public class LocacoesController {
     public void excluir(int id) {
         dao.excluir(id);
         result.redirectTo(this).lista();
+    }
+    public void sair(){
+        session.invalidate();
+        result.redirectTo("/index.jsp");
     }
 
 }

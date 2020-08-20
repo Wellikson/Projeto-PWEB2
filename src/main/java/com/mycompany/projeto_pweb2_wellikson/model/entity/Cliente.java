@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "tb_cliente")
 public class Cliente implements Serializable {
-   
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_cliente;
@@ -35,9 +35,12 @@ public class Cliente implements Serializable {
     @NotNull(message = "{obrigatorio}")
     private String telefone;
 
+    @NotNull(message = "{obrigatorio}")
+    private String senha;
+
     @OneToMany(mappedBy = "cliente",
-             cascade = {CascadeType.REMOVE},
-             fetch = FetchType.EAGER)
+            cascade = {CascadeType.REMOVE},
+            fetch = FetchType.EAGER)
     List<Locacao> locacoes;
 
     public Integer getId_cliente() {
@@ -71,18 +74,29 @@ public class Cliente implements Serializable {
     public void setLocacoes(List<Locacao> locacoes) {
         this.locacoes = locacoes;
     }
-    public int nlocacoes(){
+
+    public int nlocacoes() {
         return locacoes.size();
     }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
     public String locacoes() {
         String todas = "";
-        if(locacoes != null){
+        if (locacoes != null) {
             for (int i = 0; i < locacoes.size(); i++) {
                 todas = todas + locacoes.get(i).dados() + "<br>";
-            }        
-        }else
-            todas="Sem Locaçoes no Momento!";
+            }
+        } else {
+            todas = "Sem Locaçoes no Momento!";
+        }
         return todas;
     }
-    
+
 }

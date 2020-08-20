@@ -8,9 +8,12 @@ package com.mycompany.projeto_pweb2_wellikson.controller;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.Validator;
+import br.com.caelum.vraptor.validator.I18nMessage;
+import br.com.caelum.vraptor.validator.SimpleMessage;
 import com.mycompany.projeto_pweb2_wellikson.model.dao.ClienteDao;
 import com.mycompany.projeto_pweb2_wellikson.model.dao.LocacaoDao;
 import com.mycompany.projeto_pweb2_wellikson.model.entity.Cliente;
+import com.mycompany.projeto_pweb2_wellikson.model.entity.ClienteLogado;
 import java.util.List;
 import javax.inject.Inject;
 
@@ -33,10 +36,43 @@ public class ClientesController {
     @Inject
     Validator validator;
 
+    @Inject
+    ClienteLogado clientelogado;
+
     public void form() {
     }
 
     public void dados() {
+
+    }
+
+    public void login() {
+        if (clientelogado.isLogado()) {
+            result.redirectTo(LocacoesController.class).form();
+        }
+    }
+
+    public void validarlogin(Cliente cliente) {
+
+        Cliente c = dao.busca(cliente);
+        if (c != null) {
+            clientelogado.login(c);
+            Cliente c1 = dao.buscarCliente(c.getId_cliente());
+            result.include("clienteLog", c1);
+            result.redirectTo(LocacoesController.class).form();
+        } else {
+            validator.add(new SimpleMessage("login_invalido",
+                    "Login ou senha incorretos"));
+            validator.onErrorRedirectTo(this).login();
+        }
+//        validator.addIf(!dao.carrega(cliente),
+//                new I18nMessage("Cliente", "cadastro"));
+//        validator.validate(dao.autenticar(cliente));       
+//        validator.onErrorRedirectTo(this).login();
+//        Cliente c1 = dao.buscarCliente(cliente.getId_cliente());
+//        result.include("clienteLog", c1);
+//        clientelogado.login(c1);
+//        result.redirectTo(LocacoesController.class).form();
 
     }
 
