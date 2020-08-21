@@ -18,7 +18,7 @@
 
                 text-align:center;
             }
-            
+
 
 
         </style>
@@ -56,15 +56,17 @@
             </div>
             <div class="">
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <c:if test="${clientelogado.logado}">
+                    <c:if test="${clientelogado.logado}">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${clientelogado.nome}</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown10">
                                 <a class="dropdown-item" href="${linkTo[LocacoesController].sair}">Sair</a>
                             </div>
                         </li>
                     </c:if>
-                    </li>
+                    <c:if test="${!clientelogado.logado}">
+                        <a class="nav-link navbar-brand" href="${linkTo[ClientesController].login}">Fazer Login</a>
+                    </c:if>
                 </ul>
             </div>
         </nav>
